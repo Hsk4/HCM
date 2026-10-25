@@ -22,6 +22,11 @@ import {
  * its computed `breakdown` JSON so a paid slip is reproducible even if the tax
  * slabs change later.
  *
+ * This file must be committed. `db/index.ts`, every service, the migration
+ * generator and the tests import it; when it exists only on one machine,
+ * typecheck/test/build fail on every branch. `drizzle/0000_friendly_lilith.sql`
+ * is generated from exactly this definition.
+ *
  * @implementation
  *
  * Step 1: Declare enums used by more than one table.
